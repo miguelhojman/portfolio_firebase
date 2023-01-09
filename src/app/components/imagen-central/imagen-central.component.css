@@ -1,0 +1,25 @@
+.imagen-central {
+  width: 100%;
+  height: 40rem;
+  background-image: linear-gradient(rgba(5, 7, 12, 0.2), rgba(5, 7, 12, 0.2)),
+    url(../../../assets/imagenes/campotulipanes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagen-central img {
+  width: 100%;
+  height: auto;
+}
+.titulo-imagen-central {
+  text-align: center;
+  top: 30%;
+  right: 30%;
+  color: rgb(10, 13, 13);
+}
+.titulo-imagen-central h1 {
+  font-size: 3.5rem;
+  font-family: "Anton", sans-serif;
+}

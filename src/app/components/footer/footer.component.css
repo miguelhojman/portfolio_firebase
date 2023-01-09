@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+.pfooter p {
+  color: white;
+  font-weight: 500;
+  font-style: italic;
+  display: inline-block;
+  margin-bottom: 0%;
+  padding: 0.5rem;
+  letter-spacing: 0.15rem;
+  word-spacing: 0.4rem;
+}
+@media screen and (width>767px) {
+  .footer {
+    flex-direction: row;
+  }
+}
