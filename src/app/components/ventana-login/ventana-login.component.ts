@@ -12,7 +12,8 @@ constructor(){}
 getInputValue(inputUser:string, inputPass:string){
   console.log(inputUser,'+',inputPass);
 if(inputUser==="miguel"&&inputPass==="1234"){
-  alert('Has Ingresado');
+  alert('BIENVENIDO');
+
 }
 else{
   alert('Acceso Denegado');
