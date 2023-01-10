@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class VentanaLoginComponent {
 
+constructor(){}
+
+getInputValue(inputUser:string, inputPass:string){
+  console.log(inputUser,'+',inputPass);
+if(inputUser==="miguel"&&inputPass==="1234"){
+  alert('Has Ingresado');
+}
+else{
+  alert('Acceso Denegado');
+}
+
+}
+
 }

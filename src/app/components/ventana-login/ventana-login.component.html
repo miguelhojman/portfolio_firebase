@@ -1,5 +1,5 @@
+<!-- Modal de Bootstrap-->
 <section class="ventana-login">
-  <!-- Modal de Bootstrap-->
   <div
     class="modal fade"
     id="staticBackdrop"
@@ -25,6 +25,7 @@
         <div class="modal-body">
           <label for="inputUsuario" class="form-label">USUARIO</label>
           <input
+            #campoUsuario
             type="text"
             id="inputUsuario"
             class="form-control"
@@ -32,6 +33,7 @@
           />
           <label for="inputPassword5" class="form-label">CONTRASEÑA</label>
           <input
+            #campoPass
             type="password"
             id="inputPassword5"
             class="form-control"
@@ -46,7 +48,13 @@
           >
             CERRAR
           </button>
-          <button type="button" class="btn btn-primary">INGRESAR</button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="getInputValue(campoUsuario.value, campoPass.value)"
+          >
+            INGRESAR
+          </button>
         </div>
       </div>
     </div>
