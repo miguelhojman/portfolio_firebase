@@ -13,6 +13,8 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ModalsComponent } from './components/modals/modals.component';
+import { HttpClientModule }from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ModalsComponent } from './components/modals/modals.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
