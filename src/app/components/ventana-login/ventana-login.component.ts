@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalService } from 'src/app/servicios/modal.service';
 
 @Component({
   selector: 'app-ventana-login',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./ventana-login.component.css']
 })
 export class VentanaLoginComponent {
+validacion:boolean=false;
+visible:boolean=true;
+constructor(private servicio:ModalService){}
 
+<<<<<<< HEAD
 constructor(){}
 
 getInputValue(inputUser:string, inputPass:string){
@@ -14,11 +19,13 @@ getInputValue(inputUser:string, inputPass:string){
 if(inputUser==="miguel"&&inputPass==="1234"){
   alert('BIENVENIDO');
 
+=======
+trabajoBoton(inputUser:string, inputPass:string){
+if(inputUser==="miguel" && inputPass==="1234"){
+  this.validacion=true;
+>>>>>>> modales
 }
-else{
-  alert('Acceso Denegado');
+  this.servicio.disparador.emit(this.validacion);
+  this.visible=false;
 }
-
-}
-
 }

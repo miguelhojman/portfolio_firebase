@@ -1,0 +1,15 @@
+<div *ngIf="estadoVerde" class="aceptado card">
+  <div class="card-body">
+    <h5 class="card-title">BIENVENIDO</h5>
+    <p class="card-text my-3">Te has logueado en forma correcta !!!!</p>
+    <a class="btn btn-primary" (click)="cerrar()">CERRAR</a>
+  </div>
+</div>
+
+<div *ngIf="estadoRojo" class="rechazado card">
+  <div class="card-body">
+    <h5 class="card-title">ACCESO RECHAZADO</h5>
+    <p class="card-text my-3">Por favor verifica los datos ingresados.</p>
+    <a class="btn btn-primary" (click)="cerrar()">CERRAR</a>
+  </div>
+</div>
