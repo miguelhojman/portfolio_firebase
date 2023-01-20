@@ -21,6 +21,8 @@ ngOnInit(): void {
 cerrar(){
   this.estadoVerde=false;  
   this.estadoRojo=false;
+  //esto funciona:
+  //location.reload();   
 }  
 
 validacionFn(){

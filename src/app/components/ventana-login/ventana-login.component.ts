@@ -19,3 +19,5 @@ if(inputUser==="miguel" && inputPass==="1234"){
   this.visible=false;
 }
 }
+
+  //cerrar tambien el modal del formulario Bootstrap5 (data-bs-dismiss="modal")  
