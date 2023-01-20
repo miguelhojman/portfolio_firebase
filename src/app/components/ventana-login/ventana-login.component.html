@@ -1,5 +1,5 @@
 <!-- Modal de Bootstrap-->
-<section class="ventana-login" *ngIf="visible">
+<section class="ventana-login">
   <div
     class="modal fade"
     id="staticBackdrop"
@@ -48,11 +48,7 @@
           >
             CERRAR
           </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="trabajoBoton(campoUsuario.value, campoPass.value)"
-          >
+          <button type="button" class="btn btn-primary" (click)="database()">
             INGRESAR
           </button>
         </div>
