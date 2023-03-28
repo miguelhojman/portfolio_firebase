@@ -6,14 +6,9 @@ import { DatosService } from 'src/app/servicios/datos.service';
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
-export class EducacionComponent implements OnInit{
-  constructor(private servicioDatos:DatosService){}
-  datosDelJson:any;
+export class EducacionComponent implements OnInit{  
 
-  ngOnInit(): void {
-    
-    this.servicioDatos.obtenerDatos().subscribe(data=>{
-      this.datosDelJson=data;
-    });
+  ngOnInit(): void {    
+   
   }
 }

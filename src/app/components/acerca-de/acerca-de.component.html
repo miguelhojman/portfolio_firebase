@@ -1,23 +1,25 @@
 <section class="acerca-de container-fluid">
   <div class="row">
     <div class="foto-perfil col-12 col-md-4 d-flex justify-content-center my-4">
-      <img
-        [src]="datosDelJson.acercaDe.origen"
-        [alt]="datosDelJson.acercaDe.alt"
-      />
+      <img [src]="persona.fotoPerfil" alt="Foto de Perfil" />
     </div>
     <div
       class="texto-acerca-de col-12 col-md-8 d-flex flex-column justify-content-center align-items-center px-3"
     >
-      <span>{{ datosDelJson.acercaDe.titulo }}</span>
+      <span> Acerca de mí... </span>
       <br />
       <p>
-        {{ datosDelJson.acercaDe.p1 }}
+        {{ persona.acercaDe1 }}
         <br />
-        {{ datosDelJson.acercaDe.p2 }}
+        {{ persona.acercaDe2 }}
         <br />
-        {{ datosDelJson.acercaDe.p3 }}
+        {{ persona.acercaDe3 }}
       </p>
     </div>
   </div>
 </section>
+<!--
+  "p1":"Soy Miguel, un flamante Full Stack Developer Jr. y estoy buscando nuevos horizontes laborales, como también nuevas experiencias, oportunidades y desafíos.",
+  "p2":"Mi objetivo es ingresar al mundo del Desarrollo Web, ya que algo que empezó para mi cómo un hobbie es hoy una pasión y es mi sueño poder trabajar y también vivir de ésto que me apasiona.",
+  "p3":"Creo que si bien no tengo experiencia laboral en este campo, sí he adquirido con los años la cultura del trabajo en equipo y he aportado valor a los distintos grupos que he comformado a lo largo de mi vida profesional."
+-->

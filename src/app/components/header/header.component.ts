@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Persona } from 'src/app/modelos/persona';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(){}
+  
+  persona:Persona=new Persona('','','','','','','','','','','','','');
+
+  constructor(public personaService:PersonaService){}
+
+  ngOnInit(): void {
+      this.personaService.traerPersona().subscribe(data=>{
+      this.persona=data;
+      }
+    )
+   }
 
   
 

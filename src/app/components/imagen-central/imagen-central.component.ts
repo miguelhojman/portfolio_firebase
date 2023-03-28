@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { Persona } from 'src/app/modelos/persona';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-imagen-central',
   templateUrl: './imagen-central.component.html',
   styleUrls: ['./imagen-central.component.css']
 })
-export class ImagenCentralComponent implements OnInit {
-  constructor(private servicioDatos:DatosService){}
+export class ImagenCentralComponent implements OnInit {  
+  persona:Persona=new Persona('','','','','','','','','','','','','');
 
-  datosDelJson:any;
+  constructor(public personaService:PersonaService){}
 
   ngOnInit(): void {
-    
-    this.servicioDatos.obtenerDatos().subscribe(data=>{
-      this.datosDelJson=data;
-    });
+      this.personaService.traerPersona().subscribe(data=>{
+      this.persona=data;
+      }
+    )
+   }
   }
 
-}
+
