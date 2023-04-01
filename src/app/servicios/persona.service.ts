@@ -11,7 +11,7 @@ export class PersonaService {
     
   //metodo para traer al perfil desde el back y la ddbb
   public traerPersona():Observable<Persona>{
-    return this.http.get<Persona>('http://localhost:8080/traeruno');
+    return this.http.get<Persona>('http://localhost:8080/traer/1');
   }
 
    
