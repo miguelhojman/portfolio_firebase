@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Habilidad } from 'src/app/modelos/habilidad';
+import { HabilidadService } from 'src/app/servicios/habilidad.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent {
+//habilidad:Habilidad=new Habilidad(0,'',0);
+habilidad:any;
+constructor(public habilidadService:HabilidadService){};
+
+ngOnInit(): void {
+  this.habilidadService.traerHabilidades().subscribe(data=>{
+  this.habilidad=data;  
+  });
+  }
 
 }
+
+
