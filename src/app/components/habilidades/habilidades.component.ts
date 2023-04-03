@@ -8,17 +8,15 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent {
-//habilidad:Habilidad=new Habilidad(0,'',0);
 habilidad:any;
-p:String="98%";
 constructor(public habilidadService:HabilidadService){};
 
 ngOnInit(): void {
   this.habilidadService.traerHabilidades().subscribe(data=>{
   this.habilidad=data;  
   });
-  }
 
+  }
 }
 
 

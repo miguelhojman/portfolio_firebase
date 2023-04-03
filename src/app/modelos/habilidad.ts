@@ -1,5 +1,5 @@
 export class Habilidad{
-    id:number;
+    id?:number;
     nombreHabilidad:String;
     porcentajeHabilidad:number;
 
