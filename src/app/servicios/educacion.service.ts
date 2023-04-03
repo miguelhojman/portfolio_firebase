@@ -12,6 +12,6 @@ export class EducacionService {
 
   //metodo para traer las educaciones desde el back y la ddbb
   public traerEducacion():Observable<Educacion>{
-    return this.http.get<Educacion>('http://localhost:8080/traereducacion');
+    return this.http.get<Educacion>('http://localhost:8080/traereducacion/1');
   }
 }

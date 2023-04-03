@@ -45,8 +45,7 @@
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    Escuela de fábrica.Ciclo básico común.Periodo
-                    1984-1986.Cuadro de Honor.
+                    {{ educacion.sec1Descripcion }}
                   </div>
                 </div>
               </div>
@@ -60,7 +59,7 @@
                     aria-expanded="false"
                     aria-controls="flush-collapseTen"
                   >
-                    E.N.E.T. número 28-República Francesa
+                    {{ educacion.sec2 }}
                   </button>
                 </h2>
                 <div
@@ -70,8 +69,7 @@
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    Ciclo superior.Peíodo 1987-1990. Egresado con el título de
-                    Técnico en Electrónica-Orientación en Telecomunicaciones.
+                    {{ educacion.sec2Descripcion }}
                   </div>
                 </div>
               </div>
@@ -109,7 +107,7 @@
                   aria-expanded="false"
                   aria-controls="flush-collapseNine"
                 >
-                  UTN-INGENIERÍA ELECTRÓNICA
+                  {{ educacion.univ1 }}
                 </button>
               </h2>
               <div
@@ -119,8 +117,7 @@
                 data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
-                  Período 1991-1992. Primero y segundo año de Ingeniería
-                  Electrónica.
+                  {{ educacion.univ1Descripcion }}
                 </div>
               </div>
             </div>
@@ -134,7 +131,7 @@
                   aria-expanded="false"
                   aria-controls="flush-collapseTen"
                 >
-                  UTN-INGENIERÍA QUÍMICA
+                  {{ educacion.univ2 }}
                 </button>
               </h2>
               <div
@@ -144,8 +141,7 @@
                 data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
-                  Período 1997-2003. Primero, segundo y parte de tercer año de
-                  Ingeniería Química.
+                  {{ educacion.univ2Descripcion }}
                 </div>
               </div>
             </div>
@@ -183,7 +179,7 @@
                     aria-expanded="false"
                     aria-controls="flush-collapseEleven"
                   >
-                    Club Argentec-3FTecno
+                    {{ educacion.curso1 }}
                   </button>
                 </h2>
                 <div
@@ -195,10 +191,7 @@
                   <div class="accordion-body">
                     <ul>
                       <li>
-                        Programación Orientada al Diseño Web-FRONTEND INTERMEDIO
-                      </li>
-                      <li>
-                        Programación Orientada al Diseño Web-FRONTEND + BACKEND
+                        {{ educacion.curso1Descripcion }}
                       </li>
                     </ul>
                   </div>
@@ -214,7 +207,7 @@
                     aria-expanded="false"
                     aria-controls="flush-collapseTwelve"
                   >
-                    Codo a Codo 4.0
+                    {{ educacion.curso2 }}
                   </button>
                 </h2>
                 <div
@@ -225,8 +218,9 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li>JS-FRONT END 2022</li>
-                      <li>JS-BACK END 2022</li>
+                      <li>
+                        {{ educacion.curso2Descripcion }}
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -241,7 +235,7 @@
                     aria-expanded="false"
                     aria-controls="flush-collapseThirteen"
                   >
-                    Argentina Programa 4.0
+                    {{ educacion.curso3 }}
                   </button>
                 </h2>
                 <div
@@ -252,7 +246,9 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li>Full Stack Developer Junior</li>
+                      <li>
+                        {{ educacion.curso3Descripcion }}
+                      </li>
                     </ul>
                   </div>
                 </div>
