@@ -4,111 +4,22 @@
   </div>
   <div class="row fila-proyectos">
     <div
+      *ngFor="let item of proyecto"
       class="card text-bg-success m-3 col-12 col-sm-6 col-md-4"
       style="width: 22rem"
     >
       <img
-        src="assets/imagenes/m3f.png"
+        src="{{ item.imagen }}"
         class="card-img-top mt-4"
-        alt="Proyecto Club Argentec "
+        alt="{{ item.titulo }}"
       />
       <div class="card-body">
-        <h5 class="card-title">Club Argentec</h5>
-        <h5 class="card-title">Práctica Desarrollo Web</h5>
+        <h5 class="card-title">{{ item.titulo }}</h5>
+        <h5 class="card-title">{{ item.subtitulo }}</h5>
 
         <p class="card-text">
-          Página desarrollada usando NodeJS,MongoDB,Express,EJS. Hace uso de
-          mapas,formularios,videos embebidos.Se puede ver
-          <a
-            href="https://tecno3f.onrender.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >aquí</a
-          >
-        </p>
-      </div>
-    </div>
-    <div
-      class="card text-bg-success m-3 col-12 col-sm-6 col-md-4"
-      style="width: 22rem"
-    >
-      <img
-        src="assets/imagenes/cac1.png"
-        class="card-img-top mt-4"
-        alt="Proyecto Front End "
-      />
-      <div class="card-body">
-        <h5 class="card-title">Codo a Codo</h5>
-        <h5 class="card-title">Proyecto Front End</h5>
-        <p class="card-text">
-          Página desarrollada con HTML,Bootstrap,CSS y JS.
-          <br />
-          El botón"Comprar Tickets" conduce a otra página. Se puede ver
-          <a
-            href="https://Trabajo-Practico-Integrador-con-JS.miguelhojman.repl.co"
-            target="_blank"
-            rel="noopener noreferrer"
-            >aquí</a
-          >
-        </p>
-      </div>
-    </div>
-    <div
-      class="card text-bg-success m-3 col-12 col-sm-6 col-md-4"
-      style="width: 22rem"
-    >
-      <img
-        src="assets/imagenes/portfolio.png"
-        class="card-img-top mt-4"
-        alt="Proyecto portfolio Argentina Programa "
-      />
-      <div class="card-body">
-        <h5 class="card-title">Argentina Programa</h5>
-        <h5 class="card-title">Portfolio</h5>
-        <p class="card-text">Éste portfolio.</p>
-      </div>
-    </div>
-    <div
-      class="card text-bg-success m-3 col-12 col-sm-6 col-md-4"
-      style="width: 22rem"
-    >
-      <img
-        src="assets/imagenes/cac2.png"
-        class="card-img-top mt-4"
-        alt="Proyecto carrito de compras"
-      />
-      <div class="card-body">
-        <h5 class="card-title">Codo a Codo</h5>
-        <h5 class="card-title">Carrito de Compras</h5>
-        <p class="card-text">
-          Un carrito de compras.Se puede ver
-          <a
-            href="https://carrito-ver-mvc-crud-22580.vladimirdelcid.repl.co/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >aquí</a
-          >
-        </p>
-      </div>
-    </div>
-    <div
-      class="card text-bg-success m-3 col-12 col-sm-6 col-md-4"
-      style="width: 22rem"
-    >
-      <img
-        src="assets/imagenes/cac3.png"
-        class="card-img-top mt-4"
-        alt="Proyecto FETCH API"
-      />
-      <div class="card-body">
-        <h5 class="card-title">Codo a Codo</h5>
-        <h5 class="card-title">FETCH API</h5>
-        <p class="card-text">
-          Un proyecto que consume una API de Ricky y Morty.Se puede ver
-          <a
-            href="https://fetch-api-22580.vladimirdelcid.repl.co/"
-            target="_blank"
-            rel="noopener noreferrer"
+          {{ item.descripcion }}
+          <a href="{{ item.enlace }}" target="_blank" rel="noopener noreferrer"
             >aquí</a
           >
         </p>

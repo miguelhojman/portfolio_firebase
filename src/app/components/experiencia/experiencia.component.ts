@@ -14,7 +14,6 @@ export class ExperienciaComponent implements OnInit {
   ngOnInit(): void {
     this.experienciaService.traerExperiencias().subscribe(data=>{
       this.experiencia=data;
-      console.log(data);
     }
       );
    
