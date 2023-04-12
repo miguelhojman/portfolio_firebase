@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
+import { ModoeditService } from 'src/app/servicios/modoedit.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
@@ -9,13 +10,17 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class FooterComponent {
   persona:Persona=new Persona('','','','','','','','','','','','','');
-  isLogged:boolean=true;
-  constructor(public personaService:PersonaService){}
+  isLogged:boolean=false;
+  constructor(public personaService:PersonaService,public modoedit:ModoeditService){}
 
   ngOnInit(): void {
       this.personaService.traerPersona().subscribe(data=>{
       this.persona=data;
       }
     )
+      this.modoedit.disparador.subscribe(data=>{
+        this.isLogged=data;
+      })
+
    }
 }
