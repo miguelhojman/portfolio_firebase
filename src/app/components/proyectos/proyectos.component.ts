@@ -15,8 +15,7 @@ export class ProyectosComponent {
 
   ngOnInit(): void {
     this.proyectoService.traerProyectos().subscribe(data=>{
-    this.proyecto=data;
-    console.log(this.proyecto);  
+    this.proyecto=data; 
     });
 
   }
