@@ -9,7 +9,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class EducacionComponent implements OnInit{  
   educacion:Educacion=new Educacion(1,'','','','','','','','','','','','','','',);
-  //educacion1:any;
+  isLogged:boolean=true;
   constructor(public educacionService:EducacionService){};
 
   ngOnInit(): void {    

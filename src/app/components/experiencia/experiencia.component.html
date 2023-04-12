@@ -30,5 +30,23 @@
         </div>
       </div>
     </div>
+
+    <div class="crud my-2">
+      <div>
+        <button class="bg-warning botones-cambios" *ngIf="isLogged">
+          <i class="fas fa-plus-square"></i>CREAR
+        </button>
+      </div>
+      <div>
+        <button class="bg-warning botones-cambios mx-2" *ngIf="isLogged">
+          <i class="fas fa-edit"></i>EDITAR
+        </button>
+      </div>
+      <div>
+        <button class="bg-warning botones-cambios" *ngIf="isLogged">
+          <i class="fas fa-trash-alt"></i>BORRAR
+        </button>
+      </div>
+    </div>
   </div>
 </section>

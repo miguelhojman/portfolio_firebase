@@ -9,6 +9,7 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 export class ExperienciaComponent implements OnInit {
   experiencia:any;
+  isLogged:boolean=true;
   constructor(private experienciaService: ExperienciaService){}
 
   ngOnInit(): void {

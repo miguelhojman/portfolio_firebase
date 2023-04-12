@@ -9,6 +9,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class ImagenCentralComponent implements OnInit {  
   persona:Persona=new Persona('','','','','','','','','','','','','');
+  isLogged:boolean=true;
 
   constructor(public personaService:PersonaService){}
 

@@ -9,6 +9,7 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 })
 export class ProyectosComponent {
   proyecto: any;
+  isLogged:boolean=true;
 
   constructor(private proyectoService: ProyectoService) {}
 

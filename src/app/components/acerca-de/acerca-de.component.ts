@@ -9,7 +9,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class AcercaDeComponent implements OnInit {
   persona:Persona=new Persona('','','','','','','','','','','','','');
-
+  isLogged:boolean=true;
   constructor(public personaService:PersonaService){}
 
   ngOnInit(): void {

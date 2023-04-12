@@ -15,8 +15,8 @@
   letter-spacing: 0.15rem;
   word-spacing: 0.4rem;
 }
-@media screen and (width>767px) {
+/* @media screen and (width>767px) {
   .footer {
     flex-direction: row;
   }
-}
+} */

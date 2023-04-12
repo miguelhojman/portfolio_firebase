@@ -70,10 +70,11 @@
         </svg>
       </a>
     </div>
+
+    <!-- Button trigger modal de Bootstrap-->
     <div
       class="login col-12 col-sm-2 my-1 d-flex justify-content-end align-items-center"
     >
-      <!-- Button trigger modal de Bootstrap-->
       <button
         type="button"
         class="btn"
@@ -92,5 +93,25 @@
         </svg>
       </button>
     </div>
+
+    <!------------Botones de edición--------------------------------------------->
+    <div class="crud my-2">
+      <div>
+        <button class="bg-warning botones-cambios" *ngIf="isLogged">
+          <i class="fas fa-plus-square"></i>CREAR
+        </button>
+      </div>
+      <div>
+        <button class="bg-warning botones-cambios mx-2" *ngIf="isLogged">
+          <i class="fas fa-edit"></i>EDITAR
+        </button>
+      </div>
+      <div>
+        <button class="bg-warning botones-cambios" *ngIf="isLogged">
+          <i class="fas fa-trash-alt"></i>BORRAR
+        </button>
+      </div>
+    </div>
+    <!--------------------------------------------------------->
   </div>
 </header>

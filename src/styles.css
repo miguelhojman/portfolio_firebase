@@ -8,3 +8,15 @@ body {
   font-size: 18px;
   background-color: #00358e !important;
 }
+
+.botones-cambios {
+  width: 80px;
+  height: 40px;
+
+  border: 1px solid black;
+}
+.crud {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

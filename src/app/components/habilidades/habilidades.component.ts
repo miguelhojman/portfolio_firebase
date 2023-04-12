@@ -9,6 +9,7 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 })
 export class HabilidadesComponent {
 habilidad:any;
+isLogged:boolean=true;
 constructor(public habilidadService:HabilidadService){};
 
 ngOnInit(): void {

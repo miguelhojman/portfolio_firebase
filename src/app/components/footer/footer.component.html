@@ -1,10 +1,30 @@
 <footer class="container-fluid">
   <div class="footer">
-    <div class="pfooter">
-      <p>{{ persona.footer1 }}</p>
+    <div>
+      <div class="pfooter">
+        <p>{{ persona.footer1 }}</p>
+      </div>
+      <div class="pfooter">
+        <p>{{ persona.footer2 }}</p>
+      </div>
     </div>
-    <div class="pfooter">
-      <p>{{ persona.footer2 }}</p>
+
+    <div class="crud my-2">
+      <div>
+        <button class="bg-warning botones-cambios" *ngIf="isLogged">
+          <i class="fas fa-plus-square"></i>CREAR
+        </button>
+      </div>
+      <div>
+        <button class="bg-warning botones-cambios mx-2" *ngIf="isLogged">
+          <i class="fas fa-edit"></i>EDITAR
+        </button>
+      </div>
+      <div>
+        <button class="bg-warning botones-cambios" *ngIf="isLogged">
+          <i class="fas fa-trash-alt"></i>BORRAR
+        </button>
+      </div>
     </div>
   </div>
 </footer>
