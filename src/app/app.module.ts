@@ -14,6 +14,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,7 +33,9 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

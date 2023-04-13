@@ -71,9 +71,10 @@
       </a>
     </div>
 
-    <!-- Button trigger modal de Bootstrap-->
+    <!-- LLave de login---------------Button trigger modal de Bootstrap-->
     <div
       class="login col-12 col-sm-2 my-1 d-flex justify-content-end align-items-center"
+      *ngIf="!isLogged"
     >
       <button
         type="button"
@@ -93,6 +94,21 @@
         </svg>
       </button>
     </div>
+    <!-------------boton logout-------------------------------------------->
+    <div
+      class="logout col-12 col-sm-2 my-1 d-flex justify-content-end align-items-center"
+    >
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          *ngIf="isLogged"
+          (click)="recargar()"
+        >
+          LOGOUT
+        </button>
+      </div>
+    </div>
+    <!---------------------------------------------------------------------->
 
     <!------------Botones de edición--------------------------------------------->
     <div class="crud my-2">
@@ -112,6 +128,5 @@
         </button>
       </div>
     </div>
-    <!--------------------------------------------------------->
   </div>
 </header>

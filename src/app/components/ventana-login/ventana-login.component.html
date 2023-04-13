@@ -1,5 +1,5 @@
-<!-- Modal de Bootstrap-->
 <section class="ventana-login">
+  <!-- Modal de Bootstrap-->
   <div
     class="modal fade"
     id="staticBackdrop"
@@ -19,25 +19,23 @@
             type="button"
             class="btn-close"
             data-bs-dismiss="modal"
-            aria-label="Close"
           ></button>
         </div>
         <div class="modal-body">
           <label for="inputUsuario" class="form-label">USUARIO</label>
           <input
-            #campoUsuario
             type="text"
             id="inputUsuario"
             class="form-control"
-            aria-describedby="passwordHelpBlock"
+            [(ngModel)]="usuario1"
           />
-          <label for="inputPassword5" class="form-label">CONTRASEÑA</label>
+
+          <label for="inputPassword" class="form-label">CONTRASEÑA</label>
           <input
-            #campoPass
             type="password"
-            id="inputPassword5"
+            id="inputPassword"
             class="form-control"
-            aria-describedby="passwordHelpBlock"
+            [(ngModel)]="password1"
           />
         </div>
         <div class="modal-footer">
@@ -52,6 +50,7 @@
             type="button"
             class="btn btn-primary"
             (click)="recibirLogin()"
+            data-bs-dismiss="modal"
           >
             INGRESAR
           </button>

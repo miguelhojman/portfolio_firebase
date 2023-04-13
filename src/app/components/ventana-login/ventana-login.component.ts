@@ -9,16 +9,25 @@ import { ModoeditService } from 'src/app/servicios/modoedit.service';
   styleUrls: ['./ventana-login.component.css']
 })
 export class VentanaLoginComponent {
-seHaLogueado:boolean=false;
-user:UserLogin=new UserLogin('user','1234');
-  constructor(private loginService:LoginService,public modoedit:ModoeditService){}
 
-  
+  usuario1:String='';
+  password1:String='';
+
+seHaLogueado:boolean=false;
+user:UserLogin=new UserLogin('','');
+constructor(private loginService:LoginService,public modoedit:ModoeditService){}
+
 recibirLogin():void{
+  this.user=new UserLogin(this.usuario1,this.password1);
+
     this.loginService.enviarLogin(this.user).subscribe(data=>{
     this.seHaLogueado=data;
-    console.log(this.seHaLogueado);
+    console.log("Se ha logueado vale: "+this.seHaLogueado);
+    console.log(this.usuario1);
+    console.log(this.password1);
     this.modoedit.disparador.emit(this.seHaLogueado);
+    if(this.seHaLogueado==false)
+      alert("CREDENCIALES NO VALIDAS");              
     })
   }
 }

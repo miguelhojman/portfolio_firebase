@@ -18,14 +18,16 @@ export class HeaderComponent {
   ngOnInit(): void {
       this.personaService.traerPersona().subscribe(data=>{
       this.persona=data;
-      }
-    )
+      })
 
-    this.modoedit.disparador.subscribe(data=>{
-      this.isLogged=data;
-    })
+      this.modoedit.disparador.subscribe(data=>{
+        this.isLogged=data;
+      })
+  }
 
-   }
+  recargar():void{
+    window.location.reload();
+  }
 
   
 
