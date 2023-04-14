@@ -10,7 +10,12 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class FooterComponent {
   persona:Persona=new Persona('','','','','','','','','','','','','');
-  isLogged:boolean=false;
+  isLogged:boolean=true;
+  editarSeccion:boolean=true;
+  nuevoFooter1:String='';
+  nuevoFooter2:String='';
+  cerrarModal:String='';    
+
   constructor(public personaService:PersonaService,public modoedit:ModoeditService){}
 
   ngOnInit(): void {
@@ -21,6 +26,11 @@ export class FooterComponent {
       this.modoedit.disparador.subscribe(data=>{
         this.isLogged=data;
       })
+    }
+    
+    actualizar():void{
+        console.log(this.nuevoFooter1+'  + '+this.nuevoFooter2);
+        this.cerrarModal='modal';
 
    }
 }
