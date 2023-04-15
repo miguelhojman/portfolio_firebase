@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
 import { ModoeditService } from 'src/app/servicios/modoedit.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
+import { FootereditService } from 'src/app/serviciosedicion/footeredit.service';
 
 @Component({
   selector: 'app-footer',
@@ -16,7 +17,9 @@ export class FooterComponent {
   nuevoFooter2:String='';
   cerrarModal:String='';    
 
-  constructor(public personaService:PersonaService,public modoedit:ModoeditService){}
+  constructor(public personaService:PersonaService,
+              public modoedit:ModoeditService,
+              public footerEdit:FootereditService){}
 
   ngOnInit(): void {
       this.personaService.traerPersona().subscribe(data=>{
@@ -29,8 +32,13 @@ export class FooterComponent {
     }
     
     actualizar():void{
-        console.log(this.nuevoFooter1+'  + '+this.nuevoFooter2);
-        this.cerrarModal='modal';
+      this.persona.footer1=this.nuevoFooter1;
+      this.persona.footer2=this.nuevoFooter2;
+      this.footerEdit.editar(this.persona).subscribe(data=>{
+        this.persona=data;
+      });
+      console.log(this.persona);
+        this.cerrarModal='modal';//y ademas hacer f5?
 
    }
 }
