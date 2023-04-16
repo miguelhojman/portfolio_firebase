@@ -8,7 +8,7 @@
         <p>{{ persona.footer2 }}</p>
       </div>
     </div>
-    <!------------------------botones edicion----------------------------------------------------------->
+    <!------------------------Botones edicion----------------------------------------------------------->
     <div class="crud my-2">
       <div>
         <button
@@ -42,13 +42,7 @@
       </div>
     </div>
     <!------------------------------------- Modal Editar------------------------------------------------------->
-    <div
-      class="modal fade"
-      id="ModalEdicion"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="ModalEdicion" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -57,27 +51,16 @@
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
             <div class="my-3 mx-3">
               <label class="mx-3" for="footer1">PRIMER PÁRRAFO</label>
-              <input
-                type="text"
-                id="footer1"
-                value="{{ persona.footer1 }}"
-                [(ngModel)]="nuevoFooter1"
-              />
+              <input type="text" id="footer1" [(ngModel)]="nuevoFooter1" />
             </div>
             <div class="my-3 mx-3">
               <label class="mx-3" for="footer2">SEGUNDO PÁRRAFO</label>
-              <input
-                type="text"
-                id="footer2"
-                value="{{ persona.footer2 }}"
-                [(ngModel)]="nuevoFooter2"
-              />
+              <input type="text" id="footer2" [(ngModel)]="nuevoFooter2" />
             </div>
           </div>
           <div class="modal-footer">
@@ -101,13 +84,7 @@
       </div>
     </div>
     <!-----------------------------Modal Agregar--------------------------------------------------------->
-    <div
-      class="modal fade"
-      id="ModalCreacion"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="ModalCreacion" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -116,7 +93,6 @@
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
@@ -134,15 +110,8 @@
         </div>
       </div>
     </div>
-    <!-------------------------------------------------------------------------------------->
-    <!-----------------------------Modal crear--------------------------------------------------------->
-    <div
-      class="modal fade"
-      id="ModalBorrado"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <!-----------------------------Modal Eliminar--------------------------------------------------------->
+    <div class="modal fade" id="ModalBorrado" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -151,7 +120,6 @@
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">

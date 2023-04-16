@@ -12,11 +12,9 @@ import { FootereditService } from 'src/app/serviciosedicion/footeredit.service';
 export class FooterComponent {
   persona:Persona=new Persona('','','','','','','','','','','','','');
   isLogged:boolean=true;
-  editarSeccion:boolean=true;
-  nuevoFooter1:String='';
-  nuevoFooter2:String='';
-  cerrarModal:String='';    
-
+  nuevoFooter1:String=this.persona.footer1;
+  nuevoFooter2:String=this.persona.footer2;
+ 
   constructor(public personaService:PersonaService,
               public modoedit:ModoeditService,
               public footerEdit:FootereditService){}
@@ -37,8 +35,5 @@ export class FooterComponent {
       this.footerEdit.editar(this.persona).subscribe(data=>{
         this.persona=data;
       });
-      console.log(this.persona);
-        this.cerrarModal='modal';//y ademas hacer f5?
-
-   }
+    }
 }
