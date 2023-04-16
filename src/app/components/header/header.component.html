@@ -108,23 +108,147 @@
         </button>
       </div>
     </div>
-    <!------------Botones de edición--------------------------------------------->
+    <!------------------------Botones edicion----------------------------------------------------------->
     <div class="crud my-2">
       <div>
-        <button class="bg-warning botones-cambios" *ngIf="isLogged">
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalCreacion3"
+          *ngIf="isLogged"
+        >
           <i class="fas fa-plus-square"></i>AGREGAR
         </button>
       </div>
       <div>
-        <button class="bg-warning botones-cambios mx-2" *ngIf="isLogged">
+        <button
+          class="bg-warning botones-cambios mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalEdicion3"
+          *ngIf="isLogged"
+        >
           <i class="fas fa-edit"></i>EDITAR
         </button>
       </div>
       <div>
-        <button class="bg-warning botones-cambios" *ngIf="isLogged">
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalBorrado3"
+          *ngIf="isLogged"
+        >
           <i class="fas fa-trash-alt"></i>ELIMINAR
         </button>
       </div>
     </div>
+    <!------------------------------------- Modal Editar------------------------------------------------------->
+    <div class="modal fade" id="ModalEdicion3" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="my-3 mx-3">
+              <label class="mx-3" for="mail">MAIL</label>
+              <input type="text" id="mail" [(ngModel)]="nuevoMail" />
+            </div>
+            <div class="my-3 mx-3">
+              <label class="mx-3" for="linkedin">LINKEDIN</label>
+              <input type="text" id="linkedin" [(ngModel)]="nuevoLinkedin" />
+            </div>
+            <div class="my-3 mx-3">
+              <label class="mx-3" for="github">GITHUB</label>
+              <input type="text" id="github" [(ngModel)]="nuevoGithub" />
+            </div>
+            <div class="my-3 mx-3">
+              <label class="mx-3" for="facebook">FACEBOOK</label>
+              <input type="text" id="facebook" [(ngModel)]="nuevoFacebook" />
+            </div>
+            <div class="my-3 mx-3">
+              <label class="mx-3" for="twitter">TWITTER</label>
+              <input type="text" id="twitter" [(ngModel)]="nuevoTwitter" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="actualizar()"
+              data-bs-dismiss="modal"
+            >
+              ACTUALIZAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-----------------------------Modal Agregar--------------------------------------------------------->
+    <div class="modal fade" id="ModalCreacion3" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            En ésta sección no se permite agregar nuevo contenido.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-----------------------------Modal Eliminar--------------------------------------------------------->
+    <div class="modal fade" id="ModalBorrado3" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            En ésta sección no se permite eliminar contenido.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------------------------------------------------------------------------------------->
   </div>
 </header>
