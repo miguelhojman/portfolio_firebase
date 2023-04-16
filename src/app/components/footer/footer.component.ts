@@ -11,7 +11,7 @@ import { FootereditService } from 'src/app/serviciosedicion/footeredit.service';
 })
 export class FooterComponent {
   persona:Persona=new Persona('','','','','','','','','','','','','');
-  isLogged:boolean=true;
+  isLogged:boolean=false;
   nuevoFooter1:String=this.persona.footer1;
   nuevoFooter2:String=this.persona.footer2;
  

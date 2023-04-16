@@ -11,7 +11,7 @@ import { FootereditService } from 'src/app/serviciosedicion/footeredit.service';
 })
 export class ImagenCentralComponent implements OnInit {  
   persona:Persona=new Persona('','','','','','','','','','','','','');
-  isLogged:boolean=true;
+  isLogged:boolean=false;
   nuevoNombreCompleto:String=this.persona.nombreCompleto;
   nuevoPuesto:String=this.persona.puesto;
   
