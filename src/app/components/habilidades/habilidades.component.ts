@@ -7,54 +7,83 @@ import { HabilidadeditService } from 'src/app/serviciosedicion/habilidadedit.ser
 @Component({
   selector: 'app-habilidades',
   templateUrl: './habilidades.component.html',
-  styleUrls: ['./habilidades.component.css']
+  styleUrls: ['./habilidades.component.css'],
 })
 export class HabilidadesComponent {
-habilidad:any;//al inicio se llena este array con las habilidades
-hab!:Habilidad;
-isLogged:boolean=true;
-nuevoId:number=0;
-nuevoNombre:String='Habilidad a agregar';
-nuevoPorcentaje:number=0;
+  habilidad: any; //al inicio se llena este array con las habilidades
+  hab!: Habilidad;
+  isLogged: boolean = true;
+  nuevoId!: number;
+  nuevoNombre: String = '';
+  nuevoPorcentaje!: number;
+  contador: number = 0;
+  contador2: number = 0;
 
-constructor(public habilidadService:HabilidadService,
-            public modoedit:ModoeditService,
-            public editarHab:HabilidadeditService){};
+  constructor(
+    public habilidadService: HabilidadService,
+    public modoedit: ModoeditService,
+    public editarHab: HabilidadeditService
+  ) {}
 
-ngOnInit(): void {
-  this.habilidadService.traerHabilidades().subscribe(data=>{
-  this.habilidad=data;  
-  })
-  this.modoedit.disparador.subscribe(data=>{
-    this.isLogged=data;
-  })
+  ngOnInit(): void {
+    this.habilidadService.traerHabilidades().subscribe((data) => {
+      this.habilidad = data;
+    });
+    this.modoedit.disparador.subscribe((data) => {
+      this.isLogged = data;
+    });
   }
   //metodo agregar
-  agregar():void{    
-    this.hab=new Habilidad(this.nuevoId,this.nuevoNombre,this.nuevoPorcentaje);
-    this.editarHab.editar(this.hab).subscribe(data=>{
-      this.hab=data; 
-    this.habilidadService.traerHabilidades().subscribe(data=>{
-      this.habilidad=data; 
-      }) 
-    });
+  agregar(): void {
+    this.habilidad.forEach(
+      (item: { porcentaje: number; nombreHabilidad: String; id: number }) => {
+        if (item.nombreHabilidad == this.nuevoNombre) {
+          this.contador2++;
+          console.log(this.contador2);
+        }
+      }
+    );
+    if (this.contador2 != 0) {
+      alert('La habilidad ya existe.Tal vez la quieras EDITAR');
+      this.contador2 = 0;
+      console.log(this.contador2);
+    } else {
+      this.hab = new Habilidad(
+        this.habilidad.length,
+        this.nuevoNombre,
+        this.nuevoPorcentaje
+      );
+      this.editarHab.editar(this.hab).subscribe((data) => {
+        this.hab = data;
+        this.habilidadService.traerHabilidades().subscribe((data) => {
+          this.habilidad = data;
+        });
+      });
+    }
   }
   //metodo editar
-  editar():void{    
-      this.habilidad.forEach((item: { id: number; nombreHabilidad: String; }) => {
-          if(item.id==this.nuevoId){
-            this.hab=new Habilidad(item.id,item.nombreHabilidad,this.nuevoPorcentaje);
-          } }  ) 
-    this.editarHab.editar(this.hab).subscribe(data=>{
-      this.hab=data; 
-    this.habilidadService.traerHabilidades().subscribe(data=>{
-      this.habilidad=data; 
-      }) 
-    });
+  editar(): void {
+    this.habilidad.forEach(
+      (item: { porcentaje: number; nombreHabilidad: String; id: number }) => {
+        if (item.nombreHabilidad == this.nuevoNombre) {
+          this.hab = new Habilidad(
+            item.id,
+            item.nombreHabilidad,
+            this.nuevoPorcentaje
+          );
+          this.contador++;
+        }
+      }
+    );
+    if (this.contador == 0) {
+      alert('Habilidad no encontrada.Tal vez la quieres AGREGAR');
+    } else {
+      this.editarHab.editar(this.hab).subscribe((data) => {
+        this.hab = data;
+        this.habilidadService.traerHabilidades().subscribe((data) => {
+          this.habilidad = data;
+        });
+      });
     }
-    }
-
-
-
-
-
+  }
+}

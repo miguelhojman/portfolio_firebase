@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <!----------------------------------------modal crear/agregar habil--------------------------------------------------->
+    <!--------------Modal para agregar habilidad-------------------------->
     <div class="modal" tabindex="-1" id="ModalCreacion5">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -59,27 +59,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Porcentaje</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of habilidad">
-                  <th scope="row">{{ item.id }}</th>
-                  <td>{{ item.nombreHabilidad }}</td>
-                  <td>{{ item.porcentajeHabilidad }}</td>
-                </tr>
-              </tbody>
-            </table>
             <div>
-              <div class="my-3 mx-3">
-                <label class="mx-3" for="idhab">ID</label>
-                <input type="text" id="idhab" [(ngModel)]="nuevoId" />
-              </div>
               <div class="my-3 mx-3">
                 <label class="mx-3" for="nombrehab">NOMBRE</label>
                 <input type="text" id="nombrehab" [(ngModel)]="nuevoNombre" />
@@ -108,13 +88,13 @@
               data-bs-dismiss="modal"
               (click)="agregar()"
             >
-              ACTUALIZAR
+              AGREGAR
             </button>
           </div>
         </div>
       </div>
     </div>
-    <!----------------------------------------modal editar habil--------------------------------------------------->
+    <!-------------Modal para editar habilidad--------------------------->
     <div class="modal" tabindex="-1" id="ModalEdicion5">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -130,14 +110,12 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">ID</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Porcentaje</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of habilidad">
-                  <th scope="row">{{ item.id }}</th>
                   <td>{{ item.nombreHabilidad }}</td>
                   <td>{{ item.porcentajeHabilidad }}</td>
                 </tr>
@@ -145,13 +123,9 @@
             </table>
             <div>
               <div class="my-3 mx-3">
-                <label class="mx-3" for="idhab2">ID</label>
-                <input type="text" id="idhab2" [(ngModel)]="nuevoId" />
+                <label class="mx-3" for="nombrehab2">NOMBRE</label>
+                <input type="text" id="nombrehab2" [(ngModel)]="nuevoNombre" />
               </div>
-              <!-- <div class="my-3 mx-3">
-                <label class="mx-3" for="nombrehab">NOMBRE</label>
-                <input type="text" id="nombrehab" [(ngModel)]="nuevoNombre" />
-              </div> -->
               <div class="my-3 mx-3">
                 <label class="mx-3" for="porcenthab2">PORCENTAJE</label>
                 <input
