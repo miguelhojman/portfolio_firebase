@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <!------------------------Botones edicion----------------------------------------------------------->
+    <!----------------Botones edicion------------------------->
     <div class="crud my-2">
       <div>
         <button
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <!--------------Modal para agregar habilidad-------------------------->
+    <!--------------Modal para agregar una habilidad-------------------------->
     <div class="modal" tabindex="-1" id="ModalCreacion5">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -94,7 +94,7 @@
         </div>
       </div>
     </div>
-    <!-------------Modal para editar habilidad--------------------------->
+    <!-------------Modal para editar una habilidad--------------------------->
     <div class="modal" tabindex="-1" id="ModalEdicion5">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -156,6 +156,45 @@
         </div>
       </div>
     </div>
-    <!------------------------------------------------------------------>
+    <!--------------Modal para eliminar una habilidad-------------------------->
+    <div class="modal" tabindex="-1" id="ModalBorrado5">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">ELIMINAR UNA HABILIDAD DE TU PORTFOLIO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombrehab3">NOMBRE</label>
+                <input type="text" id="nombrehab3" [(ngModel)]="nuevoNombre" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="eliminar()"
+            >
+              ELIMINAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

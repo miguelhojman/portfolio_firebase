@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Habilidad } from 'src/app/modelos/habilidad';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
 import { ModoeditService } from 'src/app/servicios/modoedit.service';
+import { HabilidadBorradoService } from 'src/app/serviciosedicion/habilidad-borrado.service';
 import { HabilidadeditService } from 'src/app/serviciosedicion/habilidadedit.service';
 
 @Component({
@@ -10,19 +11,21 @@ import { HabilidadeditService } from 'src/app/serviciosedicion/habilidadedit.ser
   styleUrls: ['./habilidades.component.css'],
 })
 export class HabilidadesComponent {
+  isLogged: boolean = false;
   habilidad: any; //al inicio se llena este array con las habilidades
   hab!: Habilidad;
-  isLogged: boolean = true;
   nuevoId!: number;
   nuevoNombre: String = '';
   nuevoPorcentaje!: number;
   contador: number = 0;
   contador2: number = 0;
+  idEliminar: number = 0;
 
   constructor(
     public habilidadService: HabilidadService,
     public modoedit: ModoeditService,
-    public editarHab: HabilidadeditService
+    public editarHab: HabilidadeditService,
+    public eliminarHab: HabilidadBorradoService
   ) {}
 
   ngOnInit(): void {
@@ -39,17 +42,15 @@ export class HabilidadesComponent {
       (item: { porcentaje: number; nombreHabilidad: String; id: number }) => {
         if (item.nombreHabilidad == this.nuevoNombre) {
           this.contador2++;
-          console.log(this.contador2);
         }
       }
     );
     if (this.contador2 != 0) {
       alert('La habilidad ya existe.Tal vez la quieras EDITAR');
       this.contador2 = 0;
-      console.log(this.contador2);
     } else {
       this.hab = new Habilidad(
-        this.habilidad.length,
+        this.nuevoId,
         this.nuevoNombre,
         this.nuevoPorcentaje
       );
@@ -85,5 +86,18 @@ export class HabilidadesComponent {
         });
       });
     }
+  }
+  //metodo eliminar
+  eliminar(): void {
+    this.habilidad.forEach(
+      (item: { porcentaje: number; nombreHabilidad: String; id: number }) => {
+        if (item.nombreHabilidad == this.nuevoNombre) {
+          this.idEliminar = item.id;
+        }
+      }
+    );
+    this.eliminarHab.eliminar(this.idEliminar).subscribe((data) => {
+      this.habilidad = data;
+    });
   }
 }
