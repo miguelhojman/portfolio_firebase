@@ -19,3 +19,6 @@
 .experiencia p {
   font-weight: 700;
 }
+.modal {
+  --bs-modal-width: 600px !important;
+}

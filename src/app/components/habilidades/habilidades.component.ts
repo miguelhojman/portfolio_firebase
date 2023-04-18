@@ -19,6 +19,7 @@ export class HabilidadesComponent {
   nuevoPorcentaje!: number;
   contador: number = 0;
   contador2: number = 0;
+  contador3: number = 0;
   idEliminar: number = 0;
 
   constructor(
@@ -78,6 +79,7 @@ export class HabilidadesComponent {
     );
     if (this.contador == 0) {
       alert('Habilidad no encontrada.Tal vez la quieres AGREGAR');
+      this.contador = 0;
     } else {
       this.editarHab.editar(this.hab).subscribe((data) => {
         this.hab = data;
@@ -93,11 +95,16 @@ export class HabilidadesComponent {
       (item: { porcentaje: number; nombreHabilidad: String; id: number }) => {
         if (item.nombreHabilidad == this.nuevoNombre) {
           this.idEliminar = item.id;
+          this.contador3++;
         }
       }
     );
-    this.eliminarHab.eliminar(this.idEliminar).subscribe((data) => {
-      this.habilidad = data;
-    });
+    if (this.contador3 == 0) {
+      alert('No existe esa habilidad.');
+    } else {
+      this.eliminarHab.eliminar(this.idEliminar).subscribe((data) => {
+        this.habilidad = data;
+      });
+    }
   }
 }
