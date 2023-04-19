@@ -12,7 +12,7 @@ import { ExperienciaeditService } from 'src/app/serviciosedicion/experienciaedit
 })
 export class ExperienciaComponent implements OnInit {
   experiencia: any;
-  isLogged: boolean = true;
+  isLogged: boolean = false;
   nuevaEmpresa: String = '';
   nuevoRubro: String = '';
   nuevoPeriodo: String = '';
@@ -41,7 +41,33 @@ export class ExperienciaComponent implements OnInit {
     });
   }
   //metodo edicion-----------------------------------
-  editar(): void {}
+  editar(): void {
+    this.experiencia.forEach(
+      (item: { empresa: String; id: number; nuevaEmpresa: String }) => {
+        if (item.empresa == this.nuevaEmpresa) {
+          this.exp = new Experiencia(
+            item.id,
+            item.empresa,
+            this.nuevoRubro,
+            this.nuevoPeriodo,
+            this.nuevaTarea
+          );
+          this.contador++;
+        }
+      }
+    );
+    if (this.contador == 0) {
+      alert('Empresa no encontrada.Tal vez la quieres AGREGAR');
+      this.contador = 0;
+    } else {
+      this.editarExp.editar(this.exp).subscribe((data) => {
+        this.exp = data;
+        this.experienciaService.traerExperiencias().subscribe((data) => {
+          this.experiencia = data;
+        });
+      });
+    }
+  }
   //metodo agregar-------------------------------------
   agregar(): void {
     this.experiencia.forEach((x: { empresa: String }) => {
