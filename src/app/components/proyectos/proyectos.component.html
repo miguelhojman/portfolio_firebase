@@ -6,13 +6,8 @@
     <div
       *ngFor="let item of proyecto"
       class="card text-bg-success m-3 col-12 col-sm-6 col-md-4"
-      style="width: 22rem"
+      style="width: 18rem"
     >
-      <img
-        src="{{ item.imagen }}"
-        class="card-img-top mt-4"
-        alt="{{ item.titulo }}"
-      />
       <div class="card-body">
         <h5 class="card-title">{{ item.titulo }}</h5>
         <h5 class="card-title">{{ item.subtitulo }}</h5>
@@ -25,6 +20,7 @@
         </p>
       </div>
     </div>
+    <!-----------------------------btn-------------------------------------------->
     <div class="crud my-2">
       <div>
         <button class="bg-warning botones-cambios" *ngIf="isLogged">
@@ -42,5 +38,6 @@
         </button>
       </div>
     </div>
+    <!-------------------------------------------------------------------->
   </div>
 </section>

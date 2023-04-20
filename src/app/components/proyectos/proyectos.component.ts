@@ -10,19 +10,20 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 })
 export class ProyectosComponent {
   proyecto: any;
-  isLogged:boolean=false;
+  isLogged: boolean = true;
 
-  constructor(private proyectoService: ProyectoService,public modoedit:ModoeditService) {}
+  constructor(
+    private proyectoService: ProyectoService,
+    public modoedit: ModoeditService
+  ) {}
 
   ngOnInit(): void {
-    this.proyectoService.traerProyectos().subscribe(data=>{
-    this.proyecto=data; 
-    })
+    this.proyectoService.traerProyectos().subscribe((data) => {
+      this.proyecto = data;
+    });
 
-    this.modoedit.disparador.subscribe(data=>{
-      this.isLogged=data;
-    })
-
-
+    this.modoedit.disparador.subscribe((data) => {
+      this.isLogged = data;
+    });
   }
 }

@@ -6,20 +6,39 @@ import { ModoeditService } from 'src/app/servicios/modoedit.service';
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
-  styleUrls: ['./educacion.component.css']
+  styleUrls: ['./educacion.component.css'],
 })
-export class EducacionComponent implements OnInit{  
-  educacion:Educacion=new Educacion(1,'','','','','','','','','','','','','','',);
-  isLogged:boolean=false;
-  constructor(public educacionService:EducacionService, public modoedit:ModoeditService){};
+export class EducacionComponent implements OnInit {
+  educacion: Educacion = new Educacion(
+    1,
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+  );
+  isLogged: boolean = true;
+  constructor(
+    public educacionService: EducacionService,
+    public modoedit: ModoeditService
+  ) {}
 
-  ngOnInit(): void {    
-    this.educacionService.traerEducacion().subscribe(data=>{
-      this.educacion=data;
+  ngOnInit(): void {
+    this.educacionService.traerEducacion().subscribe((data) => {
+      this.educacion = data;
     });
 
-    this.modoedit.disparador.subscribe(data=>{
-      this.isLogged=data;
-    })
+    this.modoedit.disparador.subscribe((data) => {
+      this.isLogged = data;
+    });
   }
 }
