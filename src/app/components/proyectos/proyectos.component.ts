@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Proyecto } from 'src/app/modelos/proyecto';
 import { ModoeditService } from 'src/app/servicios/modoedit.service';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
+import { ProyectoBorradoService } from 'src/app/serviciosedicion/proyecto-borrado.service';
 import { ProyectoeditService } from 'src/app/serviciosedicion/proyectoedit.service';
 
 @Component({
@@ -21,11 +22,13 @@ export class ProyectosComponent {
   contador: number = 0;
   contador2: number = 0;
   contador3: number = 0;
+  idEliminar: number = 0;
 
   constructor(
     private proyectoService: ProyectoService,
     public modoedit: ModoeditService,
-    public editarProyecto: ProyectoeditService
+    public editarProyecto: ProyectoeditService,
+    public eliminarProyecto: ProyectoBorradoService
   ) {}
 
   ngOnInit(): void {
@@ -88,6 +91,23 @@ export class ProyectosComponent {
           this.proyecto = data;
         });
       });
+    }
+  }
+  //metodo eliminar
+  eliminar(): void {
+    this.proyecto.forEach((item: { titulo: String; id: number }) => {
+      if (item.titulo == this.nuevoTitulo) {
+        this.idEliminar = item.id;
+        this.contador3++;
+      }
+    });
+    if (this.contador3 == 0) {
+      alert('No existe ese proyecto.');
+    } else {
+      this.eliminarProyecto.eliminar(this.idEliminar).subscribe((data) => {
+        this.proyecto = data;
+      });
+      this.contador3 = 0;
     }
   }
 }

@@ -53,7 +53,7 @@
         </button>
       </div>
     </div>
-    <!-------------Modal para editar una habilidad--------------------------->
+    <!-------------Modal para editar un proyecto--------------------------->
     <div class="modal" tabindex="-1" id="ModalEdicion7">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -131,7 +131,7 @@
         </div>
       </div>
     </div>
-    <!--------------Modal para agregar una habilidad-------------------------->
+    <!--------------Modal para agregar un proyecto-------------------------->
     <div class="modal" tabindex="-1" id="ModalCreacion7">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -191,6 +191,45 @@
         </div>
       </div>
     </div>
-    <!-------------------------------------------------------------------->
+    <!--------------Modal para eliminar un proyecto-------------------------->
+    <div class="modal" tabindex="-1" id="ModalBorrado7">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">ELIMINAR UN PROYECTO DE TU PORTFOLIO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="titulo3">TÍTULO</label>
+                <input type="text" id="titulo3" [(ngModel)]="nuevoTitulo" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="eliminar()"
+            >
+              ELIMINAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
