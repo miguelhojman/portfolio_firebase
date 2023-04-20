@@ -1,6 +1,5 @@
 export class Proyecto {
-  id: number;
-  imagen: String;
+  id?: number;
   titulo: String;
   subtitulo: String;
   descripcion: String;
@@ -8,14 +7,12 @@ export class Proyecto {
 
   constructor(
     id: number,
-    imagen: String,
     titulo: String,
     subtitulo: String,
     descripcion: String,
     enlace: String
   ) {
     this.id = id;
-    this.imagen = imagen;
     this.titulo = titulo;
     this.subtitulo = subtitulo;
     this.descripcion = descripcion;
