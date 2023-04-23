@@ -3,10 +3,12 @@
   padding: 0%;
   box-sizing: border-box;
 }
-
+:root {
+  --color-fondo: rgb(238, 124, 124);
+}
 body {
   font-size: 18px;
-  background-color: #00358e !important; /*color de Argentina Programa : #00358e*/
+  background-color: var(--color-fondo) !important;
 }
 
 .botones-cambios {

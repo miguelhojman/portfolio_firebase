@@ -11,7 +11,7 @@ import { EducacioneditService } from 'src/app/serviciosedicion/educacionedit.ser
   styleUrls: ['./educacion.component.css'],
 })
 export class EducacionComponent implements OnInit {
-  isLogged: boolean = true;
+  isLogged: boolean = false;
   educacion: any;
   edu!: Educacion;
   nuevoId!: number;

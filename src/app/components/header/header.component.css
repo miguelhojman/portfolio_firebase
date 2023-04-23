@@ -1,5 +1,5 @@
 header {
-  background-color: #00358e;
+  background-color: var(--color-fondo) !important;
 }
 .logo img {
   height: 3.5rem;
