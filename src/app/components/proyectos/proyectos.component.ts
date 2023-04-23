@@ -13,7 +13,7 @@ import { ProyectoeditService } from 'src/app/serviciosedicion/proyectoedit.servi
 export class ProyectosComponent {
   proyecto: any;
   proy!: Proyecto;
-  isLogged: boolean = true;
+  isLogged: boolean = false;
   nuevoId!: number;
   nuevoSubtitulo: String = '';
   nuevoTitulo: String = '';

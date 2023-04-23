@@ -6,11 +6,13 @@ import { Educacion } from '../modelos/educacion';
 @Injectable({
   providedIn: 'root',
 })
-export class EducacionService {
+export class EducacionBorradoService {
+  url: string = '';
+
   constructor(private http: HttpClient) {}
 
-  //metodo para traer las educaciones desde el back y la ddbb
-  public traerEducacion(): Observable<Educacion> {
-    return this.http.get<Educacion>('http://localhost:8080/traereducacion');
+  public eliminar(id: number): Observable<Educacion> {
+    this.url = 'http://localhost:8080/eliminareducacion/' + id;
+    return this.http.delete<Educacion>(this.url);
   }
 }
