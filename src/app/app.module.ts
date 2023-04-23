@@ -15,6 +15,7 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorLoginComponent } from './components/error-login/error-login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EducacionComponent,
     ProyectosComponent,
     FooterComponent,
-    VentanaLoginComponent
+    VentanaLoginComponent,
+    ErrorLoginComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@ export class VentanaLoginComponent {
       this.seHaLogueado = data;
       this.modoedit.disparador.emit(this.seHaLogueado);
       if (this.seHaLogueado == false) {
-        alert('CREDENCIALES NO VALIDAS');
+        //alert('CREDENCIALES NO VALIDAS');
       }
     });
   }
