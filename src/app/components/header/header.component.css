@@ -16,6 +16,9 @@ header {
   transform: scale(1.3);
   transition: 0.3s;
 }
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}
 /*HEADER @media*/
 @media screen and (width<576px) {
   .logo {

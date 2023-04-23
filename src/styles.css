@@ -6,6 +6,7 @@
 :root {
   --color-fondo: rgb(238, 124, 124);
   --fondo-tablas: rgb(227, 110, 110);
+  --fondo-modal: rgb(236, 249, 126);
 }
 body {
   font-size: 18px;

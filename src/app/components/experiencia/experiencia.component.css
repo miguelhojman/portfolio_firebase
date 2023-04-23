@@ -34,3 +34,6 @@
 .fondo {
   background-color: var(--fondo-tablas);
 }
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}

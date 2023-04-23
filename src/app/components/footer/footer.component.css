@@ -14,6 +14,9 @@
   letter-spacing: 0.15rem;
   word-spacing: 0.4rem;
 }
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}
 /* @media screen and (width>767px) {
   .footer {
     flex-direction: row;

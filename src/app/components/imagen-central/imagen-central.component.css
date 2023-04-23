@@ -24,3 +24,6 @@
   font-size: 3.5rem;
   font-family: "Anton", sans-serif;
 }
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}

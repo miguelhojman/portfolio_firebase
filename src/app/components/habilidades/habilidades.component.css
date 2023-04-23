@@ -31,3 +31,6 @@
   position: relative;
   overflow: hidden;
 }
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}

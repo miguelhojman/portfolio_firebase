@@ -20,3 +20,6 @@
 .card-text a {
   color: black;
 }
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}

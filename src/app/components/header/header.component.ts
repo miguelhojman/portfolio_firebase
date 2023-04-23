@@ -7,48 +7,59 @@ import { FootereditService } from 'src/app/serviciosedicion/footeredit.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  
-  persona:Persona=new Persona('','','','','','','','','','','','','');
-  isLogged:boolean=false;
-  nuevoMail:String=this.persona.mail;
-  nuevoLinkedin:String=this.persona.linkedin;
-  nuevoGithub:String=this.persona.github;
-  nuevoFacebook:String=this.persona.facebook;
-  nuevoTwitter:String=this.persona.twitter;
-  
+  persona: Persona = new Persona(
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+  );
+  isLogged: boolean = false;
+  nuevoMail: String = this.persona.mail;
+  nuevoLinkedin: String = this.persona.linkedin;
+  nuevoGithub: String = this.persona.github;
+  nuevoFacebook: String = this.persona.facebook;
+  nuevoTwitter: String = this.persona.twitter;
 
-  constructor(public personaService:PersonaService,
-              public modoedit:ModoeditService,
-              public footerEdit:FootereditService){}
+  constructor(
+    public personaService: PersonaService,
+    public modoedit: ModoeditService,
+    public footerEdit: FootereditService
+  ) {}
 
   ngOnInit(): void {
-      this.personaService.traerPersona().subscribe(data=>{
-      this.persona=data;
-      })
+    this.personaService.traerPersona().subscribe((data) => {
+      this.persona = data;
+    });
 
-      this.modoedit.disparador.subscribe(data=>{
-        this.isLogged=data;
-      })
+    this.modoedit.disparador.subscribe((data) => {
+      this.isLogged = data;
+    });
   }
 
-  recargar():void{
+  recargar(): void {
     window.location.reload();
   }
 
-  actualizar():void{
-    this.persona.mail=this.nuevoMail;
-    this.persona.linkedin=this.nuevoLinkedin;
-    this.persona.github=this.nuevoGithub;
-    this.persona.facebook=this.nuevoFacebook;
-    this.persona.twitter=this.nuevoTwitter;
-    this.footerEdit.editar(this.persona).subscribe(data=>{
-      this.persona=data;
+  actualizar(): void {
+    this.persona.mail = this.nuevoMail;
+    this.persona.linkedin = this.nuevoLinkedin;
+    this.persona.github = this.nuevoGithub;
+    this.persona.facebook = this.nuevoFacebook;
+    this.persona.twitter = this.nuevoTwitter;
+    this.footerEdit.editar(this.persona).subscribe((data) => {
+      this.persona = data;
     });
   }
-  
-
-
 }
