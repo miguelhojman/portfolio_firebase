@@ -3,19 +3,17 @@
 >
   <div class="my-4 w-75">
     <h2>EDUCACIÓN</h2>
-    <table class="table table-success table-striped my-2">
-      <thead class="titulos">
-        <tr>
+    <table class="table my-2 borde fondo">
+      <thead>
+        <tr class="titulos table-dark">
           <th scope="col">NIVEL</th>
           <th scope="col">INSTITUCIÓN</th>
           <th scope="col">DESCRIPCIÓN</th>
         </tr>
       </thead>
-      <tbody class="body">
-        <tr *ngFor="let item of educacion">
-          <th scope="row">
-            {{ item.nivel }}
-          </th>
+      <tbody class="body table-group-divider">
+        <tr class="borde" *ngFor="let item of educacion">
+          <td>{{ item.nivel }}</td>
           <td>{{ item.institucion }}</td>
           <td>{{ item.descripcion }}</td>
         </tr>
@@ -174,20 +172,6 @@
             ></button>
           </div>
           <div class="modal-body">
-            <!-- <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Porcentaje</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of habilidad">
-                  <td>{{ item.nombreHabilidad }}</td>
-                  <td>{{ item.porcentajeHabilidad }}</td>
-                </tr>
-              </tbody>
-            </table> -->
             <div>
               <h5>ELIGE LA CAPACITACIÓN A MODIFICAR</h5>
               <div class="my-3 mx-3">

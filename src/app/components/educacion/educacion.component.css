@@ -10,8 +10,14 @@
   text-align: center;
 }
 .titulos {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .body {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+}
+.borde {
+  border: 2px solid black;
+}
+.fondo {
+  background-color: var(--fondo-tablas);
 }

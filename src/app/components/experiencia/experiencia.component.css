@@ -7,7 +7,6 @@
   margin-bottom: 0 !important;
   text-decoration: underline;
   text-align: center;
-  /* color: rgb(243, 180, 99); */
 }
 .accordion-button {
   background-color: rgb(192, 136, 244);
@@ -21,4 +20,17 @@
 }
 .modal {
   --bs-modal-width: 600px !important;
+}
+
+.titulos {
+  font-size: 1.4rem;
+}
+.body {
+  font-size: 1.1rem;
+}
+.borde {
+  border: 2px solid black;
+}
+.fondo {
+  background-color: var(--fondo-tablas);
 }
