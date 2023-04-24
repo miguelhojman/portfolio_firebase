@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Persona } from 'src/app/modelos/persona';
+import { UserLogin } from 'src/app/modelos/user-login';
+import { CambiarCredencialesService } from 'src/app/servicios/cambiar-credenciales.service';
 import { ModoeditService } from 'src/app/servicios/modoedit.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
 import { FootereditService } from 'src/app/serviciosedicion/footeredit.service';
@@ -25,18 +27,20 @@ export class HeaderComponent {
     '',
     ''
   );
-  isLogged: boolean = true;
+  isLogged: boolean = false;
   nuevoMail: String = this.persona.mail;
   nuevoLinkedin: String = this.persona.linkedin;
   nuevoGithub: String = this.persona.github;
   nuevoFacebook: String = this.persona.facebook;
   nuevoTwitter: String = this.persona.twitter;
+  usuario!: UserLogin;
   nuevoUsuario: String = '';
   nuevoPassword: String = '';
   constructor(
     public personaService: PersonaService,
     public modoedit: ModoeditService,
-    public footerEdit: FootereditService
+    public footerEdit: FootereditService,
+    public cambiarCred: CambiarCredencialesService
   ) {}
 
   ngOnInit(): void {
@@ -52,8 +56,9 @@ export class HeaderComponent {
   recargar(): void {
     window.location.reload();
   }
-  cambiarCredenciales() {
-    console.log('jjjjjjj');
+  cambiarCredenciales(): void {
+    this.usuario = new UserLogin(this.nuevoUsuario, this.nuevoPassword);
+    this.cambiarCred.enviarCredenciales(this.usuario).subscribe((data) => {});
   }
   actualizar(): void {
     this.persona.mail = this.nuevoMail;
