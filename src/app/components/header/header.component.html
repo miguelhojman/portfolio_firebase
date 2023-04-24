@@ -70,8 +70,7 @@
         </svg>
       </a>
     </div>
-
-    <!------------- LLave de login---------------Button trigger del modal de Bootstrap-->
+    <!------------- LLave de login--Button trigger del modal de Bootstrap----------------->
     <div
       class="login col-12 col-sm-2 my-1 d-flex justify-content-end align-items-center"
       *ngIf="!isLogged"
@@ -94,10 +93,8 @@
         </svg>
       </button>
     </div>
-    <!------------------------boton logout-------------------------------------------->
-    <div
-      class="logout col-12 col-sm-2 my-1 d-flex justify-content-end align-items-center"
-    >
+    <div class="logout col-12 col-sm-1 my-1">
+      <!------------------------boton logout-------------------------------------------->
       <div>
         <button
           class="bg-warning botones-cambios"
@@ -106,6 +103,19 @@
         >
           SALIR
         </button>
+      </div>
+      <!------------------------boton cambio de credenciales de logueo------------------>
+      <div class="credenciales col-12 col-sm-1 my-1">
+        <div>
+          <button
+            class="bg-warning botones-cambios"
+            data-bs-toggle="modal"
+            data-bs-target="#ModalCambioCredenciales"
+            *ngIf="isLogged"
+          >
+            CAMBIAR CLAVES
+          </button>
+        </div>
       </div>
     </div>
     <!------------------------Botones edicion-------------------------------------------->
@@ -246,6 +256,55 @@
               data-bs-dismiss="modal"
             >
               Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---------------------- Modal Cambio Credenciales------------------------------------------------------->
+    <div class="modal fade" id="ModalCambioCredenciales" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <div class="advertencia">
+              <h1 class="modal-title" id="exampleModalLabel">CUIDADO:</h1>
+              <h3>VAS A CAMBIAR USUARIO Y CONTRASEÑA</h3>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="my-3 mx-3">
+              <label class="mx-3" for="usuario">NUEVO USUARIO</label>
+              <input type="text" id="usuario" [(ngModel)]="nuevoUsuario" />
+            </div>
+            <div class="my-3 mx-3">
+              <label class="mx-3" for="password">NUEVO PASSWORD</label>
+              <input
+                type="password"
+                id="password"
+                [(ngModel)]="nuevoPassword"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="cambiarCredenciales()"
+              data-bs-dismiss="modal"
+            >
+              ACTUALIZAR
             </button>
           </div>
         </div>

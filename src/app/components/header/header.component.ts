@@ -25,13 +25,14 @@ export class HeaderComponent {
     '',
     ''
   );
-  isLogged: boolean = false;
+  isLogged: boolean = true;
   nuevoMail: String = this.persona.mail;
   nuevoLinkedin: String = this.persona.linkedin;
   nuevoGithub: String = this.persona.github;
   nuevoFacebook: String = this.persona.facebook;
   nuevoTwitter: String = this.persona.twitter;
-
+  nuevoUsuario: String = '';
+  nuevoPassword: String = '';
   constructor(
     public personaService: PersonaService,
     public modoedit: ModoeditService,
@@ -51,7 +52,9 @@ export class HeaderComponent {
   recargar(): void {
     window.location.reload();
   }
-
+  cambiarCredenciales() {
+    console.log('jjjjjjj');
+  }
   actualizar(): void {
     this.persona.mail = this.nuevoMail;
     this.persona.linkedin = this.nuevoLinkedin;
