@@ -27,6 +27,9 @@ header {
 .logout button {
   height: 3.3rem;
 }
+.credenciales button {
+  height: 3.3rem;
+}
 .advertencia {
   display: flex;
   flex-direction: column;
@@ -39,24 +42,51 @@ header {
 .advertencia h3 {
   font-size: 1.2rem;
 }
+.fila1 {
+  display: flex;
+}
+.login {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.botones-juntos {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.botones-laterales {
+  display: flex;
+  justify-content: end;
+}
 /*HEADER @media*/
-@media screen and (width<576px) {
+@media screen and (width<768px) {
+  .fila1 {
+    flex-direction: column;
+  }
   .logo {
-    display: flex;
-    justify-content: center;
+    align-self: flex-start;
   }
   .logo img {
     height: 3rem;
   }
   .social {
-    display: flex;
     justify-content: space-around !important;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding: 1rem 0;
+    align-self: center;
   }
   .login {
-    display: flex;
     justify-content: center !important;
+    align-self: center;
+  }
+  .botones-juntos {
+    display: flex;
+    justify-content: center;
+  }
+  .botones-laterales {
+    display: flex;
+    justify-content: center;
   }
 }
