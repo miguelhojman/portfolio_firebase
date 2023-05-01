@@ -11,7 +11,7 @@ export class EducacioneditService {
 
   public editar(e: Educacion): Observable<Educacion> {
     return this.http.put<Educacion>(
-      'http://localhost:8080/modificareducacion',
+      'https://renderbackend-g27z.onrender.com/modificareducacion',
       e
     );
   }

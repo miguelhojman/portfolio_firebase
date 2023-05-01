@@ -11,7 +11,8 @@ export class HabilidadBorradoService {
   constructor(private http: HttpClient) {}
 
   public eliminar(id: number): Observable<Habilidad> {
-    this.url = 'http://localhost:8080/eliminarhabilidad/' + id;
+    this.url =
+      'https://renderbackend-g27z.onrender.com/eliminarhabilidad/' + id;
     return this.http.delete<Habilidad>(this.url);
   }
 }

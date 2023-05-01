@@ -11,7 +11,7 @@ export class ExperienciaeditService {
 
   public editar(e: Experiencia): Observable<Experiencia> {
     return this.http.put<Experiencia>(
-      'http://localhost:8080/modificarexperiencia',
+      'https://renderbackend-g27z.onrender.com/modificarexperiencia',
       e
     );
   }

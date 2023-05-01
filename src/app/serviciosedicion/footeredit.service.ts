@@ -4,13 +4,15 @@ import { Persona } from '../modelos/persona';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FootereditService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  public editar(p:Persona):Observable<Persona>{
-    return this.http.put<Persona>("http://localhost:8080/modificar",p);
+  public editar(p: Persona): Observable<Persona> {
+    return this.http.put<Persona>(
+      'https://renderbackend-g27z.onrender.com/modificar',
+      p
+    );
   }
 }

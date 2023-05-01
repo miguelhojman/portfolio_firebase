@@ -12,7 +12,8 @@ export class EducacionBorradoService {
   constructor(private http: HttpClient) {}
 
   public eliminar(id: number): Observable<Educacion> {
-    this.url = 'http://localhost:8080/eliminareducacion/' + id;
+    this.url =
+      'https://renderbackend-g27z.onrender.com/eliminareducacion/' + id;
     return this.http.delete<Educacion>(this.url);
   }
 }

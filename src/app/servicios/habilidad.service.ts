@@ -4,14 +4,15 @@ import { Habilidad } from '../modelos/habilidad';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HabilidadService {
-
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   //metodo para traer las habilidades desde el back y la ddbb
-  public traerHabilidades():Observable<Habilidad>{
-    return this.http.get<Habilidad>('http://localhost:8080/traerhabilidades');
+  public traerHabilidades(): Observable<Habilidad> {
+    return this.http.get<Habilidad>(
+      'https://renderbackend-g27z.onrender.com/traerhabilidades'
+    );
   }
 }
