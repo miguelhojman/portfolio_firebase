@@ -47,17 +47,17 @@ header {
 }
 .login {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 .botones-juntos {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .botones-laterales {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 /*HEADER @media*/
 @media screen and (width<768px) {
