@@ -21,6 +21,7 @@
   <div class="crud my-2">
     <div>
       <button
+        title="agregar"
         class="bg-warning botones-cambios"
         data-bs-toggle="modal"
         data-bs-target="#ModalCreacion4"
@@ -31,6 +32,7 @@
     </div>
     <div>
       <button
+        title="editar"
         class="bg-warning botones-cambios mx-2"
         data-bs-toggle="modal"
         data-bs-target="#ModalEdicion4"
@@ -41,6 +43,7 @@
     </div>
     <div>
       <button
+        title="eliminar"
         class="bg-warning botones-cambios"
         data-bs-toggle="modal"
         data-bs-target="#ModalBorrado4"
@@ -57,6 +60,7 @@
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
           <button
+            title="editar"
             type="button"
             class="btn-close"
             data-bs-dismiss="modal"
@@ -75,15 +79,10 @@
             <label class="mx-3" for="acercade3">TERCER PÁRRAFO</label>
             <input type="text" id="acercade3" [(ngModel)]="nuevoAcercaDe3" />
           </div>
-          <!------------------------------------------------------------------------->
-          <!-- <div class="my-3 mx-3">
-            <label class="mx-3" for="file">FOTO DE PERFIL</label>
-            <input type="file" id="file" />
-          </div> -->
-          <!------------------------------------------------------------------------->
         </div>
         <div class="modal-footer">
           <button
+            title="cerrar"
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
@@ -91,6 +90,7 @@
             CERRAR
           </button>
           <button
+            title="actualizar"
             type="button"
             class="btn btn-primary"
             (click)="actualizar()"
@@ -109,6 +109,7 @@
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar</h1>
           <button
+            title="cerrar"
             type="button"
             class="btn-close"
             data-bs-dismiss="modal"
@@ -119,6 +120,7 @@
         </div>
         <div class="modal-footer">
           <button
+            title="cerrar"
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
@@ -136,6 +138,7 @@
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
           <button
+            title="cerrar"
             type="button"
             class="btn-close"
             data-bs-dismiss="modal"
@@ -146,6 +149,7 @@
         </div>
         <div class="modal-footer">
           <button
+            title="cerrar"
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
